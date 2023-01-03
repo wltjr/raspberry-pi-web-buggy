@@ -1,0 +1,69 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>Raspberry Pi Buggy Controls</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+/*
+	var actions = ['move_backward', 'move_forward', 'stop', 'turn_left', 'turn_right'];
+	function buttonActions(acts) {
+	    for(var i = 0; i < acts.length; i++) {
+                $('a#'+acts[i]).on('click', function(e) {
+                   console.log("action "+acts[i]);
+                  e.preventDefault()
+                  $.getJSON('/test'+acts[i],
+                      function(data) {
+                      //do nothing
+                  });
+                  return false;
+                });
+            }
+        }
+        $(function() {
+            buttonActions(actions);
+        });
+*/
+          $(function() {
+            $('a#move_backward').on('click', function(e) {
+              e.preventDefault()
+              $.getJSON('/move_backward',
+                  function(data) {
+                  //do nothing
+              });
+              return false;
+            });
+	  });
+          $(function() {
+            $('a#move_forward').on('click', function(e) {
+              e.preventDefault()
+              $.getJSON('/move_forward',
+                  function(data) {
+                  //do nothing
+              });
+              return false;
+            });
+	  });
+          $(function() {
+            $('a#stop').on('click', function(e) {
+              e.preventDefault()
+              $.getJSON('/stop',
+                  function(data) {
+                  //do nothing
+              });
+              return false;
+            });
+	  });
+</script>
+   </head>
+   <body>
+        <h1>Raspberry Pi Buggy Controls</h1>
+        <div class='container'>
+            <form>
+                 <a href='#' id='move_backward'><button>Move Backward</button></a>
+                 <a href='#' id='move_forward'><button>Move Forward</button></a>
+                 <a href='#' id='stop'><button>Stop</button></a>
+            </form>
+    </div>
+    </body>
+</html>
