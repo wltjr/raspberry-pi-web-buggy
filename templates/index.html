@@ -1,69 +1,28 @@
 <!doctype html>
 
 <html>
-    <head>
-        <title>Raspberry Pi Buggy Controls</title>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type=text/javascript>
-/*
-	var actions = ['move_backward', 'move_forward', 'stop', 'turn_left', 'turn_right'];
-	function buttonActions(acts) {
-	    for(var i = 0; i < acts.length; i++) {
-                $('a#'+acts[i]).on('click', function(e) {
-                   console.log("action "+acts[i]);
-                  e.preventDefault()
-                  $.getJSON('/test'+acts[i],
-                      function(data) {
-                      //do nothing
-                  });
-                  return false;
-                });
-            }
-        }
-        $(function() {
-            buttonActions(actions);
-        });
-*/
-          $(function() {
-            $('a#move_backward').on('click', function(e) {
-              e.preventDefault()
-              $.getJSON('/move_backward',
-                  function(data) {
-                  //do nothing
-              });
-              return false;
-            });
-	  });
-          $(function() {
-            $('a#move_forward').on('click', function(e) {
-              e.preventDefault()
-              $.getJSON('/move_forward',
-                  function(data) {
-                  //do nothing
-              });
-              return false;
-            });
-	  });
-          $(function() {
-            $('a#stop').on('click', function(e) {
-              e.preventDefault()
-              $.getJSON('/stop',
-                  function(data) {
-                  //do nothing
-              });
-              return false;
-            });
-	  });
-</script>
-   </head>
-   <body>
-        <h1>Raspberry Pi Buggy Controls</h1>
-        <div class='container'>
-            <form>
-                 <a href='#' id='move_backward'><button>Move Backward</button></a>
-                 <a href='#' id='move_forward'><button>Move Forward</button></a>
-                 <a href='#' id='stop'><button>Stop</button></a>
-            </form>
-    </div>
-    </body>
+
+<head>
+  <title>Raspberry Pi Buggy Controls</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="static/controls.js"></script>
+</head>
+
+<body>
+  <h1>Raspberry Pi Buggy Controls</h1>
+  <div class='container'>
+    <form>
+      <label for="speed_left">Left Speed (between 0 and 255):</label>
+      <input type="range" id="speed_left" name="speed_left" min="0" max="255" step="5" value="100"><br>
+      <label for="speed_right">Right Speed (between 0 and 255):</label>
+      <input type="range" id="speed_right" name="speed_right" min="0" max="255" step="5" value="100"><br>
+      <label for="speed_lock">Lock Speed:</label>
+      <input type="checkbox" id="speed_lock" name="speed_lock" checked><br>
+      <a href='#' id='move_backward'><button>Move Backward</button></a>
+      <a href='#' id='move_forward'><button>Move Forward</button></a>
+      <a href='#' id='stop'><button>Stop</button></a>
+    </form>
+  </div>
+</body>
+
 </html>
