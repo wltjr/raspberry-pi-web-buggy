@@ -1,12 +1,21 @@
 # Simple Raspberry Pi Robot
-Basic 2 wheel robot with web UI controls, using the [simple rasberry pi robot](https://learn.adafruit.com/simple-raspberry-pi-robot/).
+Basic 2 wheel robot with web UI controls, using the [simple rasberry pi robot](https://learn.adafruit.com/simple-raspberry-pi-robot/). This requires installation of the [MotorKit Library](https://learn.adafruit.com/adafruit-dc-and-stepper-motor-hat-for-raspberry-pi/installing-software). This is based on Python 2, which is outdated and should be updated to Python 3, including the `Robot.pyc` file.
+
+## Running
+To start the embedded webapp
+```bash
+python web-buggy.py
+```
+
+## Web UI Controls
+The web server runs locally on port 5000, using the Pi's DHCP assigned IP address.
+Example `http://192.168.1.100:5000`
 
 
-## Pi
+## Pi login credentials
 username: pi
 
 password:
-
 
 
 ## GUI
