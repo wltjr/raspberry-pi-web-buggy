@@ -6,23 +6,46 @@
   <title>Raspberry Pi Buggy Controls</title>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="static/controls.js"></script>
+  <link rel="stylesheet" href="static/styles.css" />
 </head>
+<style>
+</style>
 
 <body>
   <h1>Raspberry Pi Buggy Controls</h1>
-  <div class='container'>
-    <form>
-      <label for="speed_left">Left Speed (between 0 and 255):</label>
-      <input type="range" id="speed_left" name="speed_left" min="0" max="255" step="5" value="100"><br>
-      <label for="speed_right">Right Speed (between 0 and 255):</label>
-      <input type="range" id="speed_right" name="speed_right" min="0" max="255" step="5" value="100"><br>
-      <label for="speed_lock">Lock Speed:</label>
-      <input type="checkbox" id="speed_lock" name="speed_lock" checked><br>
-      <a href='#' id='move_backward'><button>Move Backward</button></a>
-      <a href='#' id='move_forward'><button>Move Forward</button></a>
-      <a href='#' id='stop'><button>Stop</button></a>
-    </form>
-  </div>
+  <form id="controls" name="controls">
+    <input id="action" name="action" type="hidden" value="none">
+    <table>
+      <tr>
+        <td colspan="2">Speed (between 0 and 255)</td>
+      </tr>
+      <tr>
+        <td>
+          <input type="range" id="speed_left" name="speed_left" min="0" max="255" orient="vertical" step="5" value="100">
+        </td>
+        <td>
+          <input type="range" id="speed_right" name="speed_right" min="0" max="255" orient="vertical" step="5" value="100">
+        </td>
+      </tr>
+      <tr>
+        <td><label for="speed_left">Left Speed</label></td>
+        <td><label for="speed_right">Right Speed</label></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <label for="speed_lock">Lock Speeds:</label>
+          <input type="checkbox" id="speed_lock" name="speed_lock" checked>
+        </td>
+      </tr>
+      <tr>
+        <td><button type="button" onclick="submitForm()">Forward</button></td>
+        <td><button type="button" onclick="submitForm()">Backward</button></td>
+      </tr>
+      <tr>
+        <td colspan="2"><button type="button" onclick="submitForm()">Stop</button></td>
+      </tr>
+    </table>
+  </form>
 </body>
 
 </html>
