@@ -8,9 +8,6 @@
 from flask import Flask, render_template, request, jsonify
 app = Flask(__name__)
 
-#Import time
-import time
-
 #Import the Robot file PYC
 import Robot
 
@@ -33,17 +30,26 @@ def submit():
 
 	# set variables from form elements
 	action = data['action']
+	duration = int(data['duration'])
 	speed_left = int(data['speed_left'])
 	speed_right = int(data['speed_right'])
+
+	# no time limit
+	if duration == 0:
+		duration = None
 
 	# default to slowest speed
 	speed = speed_left if speed_left < speed_right else speed_right
 
 	# switch action form value
 	if action == "Backward":
-		robot.backward(speed)
+		robot.backward(speed, duration)
 	elif action == "Forward":
-		robot.forward(speed)
+		robot.forward(speed, duration)
+	elif action == "Left":
+		robot.left(speed_left, duration)
+	elif action == "Right":
+		robot.right(speed_right, duration)
 	elif action == "Stop":
 		robot.stop()
 
