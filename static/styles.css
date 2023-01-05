@@ -31,3 +31,7 @@ table {
     padding: 0.5em;
     margin: auto;
 }
+
+#duration {
+    width: 4em;
+}
