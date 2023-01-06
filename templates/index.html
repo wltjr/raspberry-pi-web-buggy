@@ -4,6 +4,7 @@
 
 <head>
   <title>Raspberry Pi Buggy Controls</title>
+  <meta name='author' content='William L. Thomson Jr.' />
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="static/controls.js"></script>
   <link rel="stylesheet" href="static/styles.css" />
@@ -39,7 +40,7 @@
       </tr>
       <tr>
         <td><label for="duration">Duration</label></td>
-        <td><input type="number" id="duration" name="duration" min="0" max="600"step="1" value="0"></td>
+        <td><input type="number" id="duration" name="duration" min="0" max="600" step="1" value="0"></td>
       </tr>
       <tr>
         <td><button type="button" onclick="submitForm()">Left</button></td>
@@ -54,6 +55,10 @@
       </tr>
     </table>
   </form>
-</body>
-
+  <footer>
+    <small>
+      &copy; 2020-2023 Florida State College at Jacksonville
+      <a rel="license" href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL-3</a>
+    </small>
+  </footer>
 </html>
